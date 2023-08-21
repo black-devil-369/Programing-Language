@@ -31,6 +31,16 @@ class DLL:
                 temp = temp.next
             temp.next = n
             n.prev = temp
+    def reverse(self):
+        if(self.start!=None and self.start.next!=None):
+            t2 = None
+            while(self.start.next!=None):
+                t1 = self.start
+                self.start = self.start.next
+                t1.next = t2
+                t2 = t1
+                t1.prev = self.start
+            self.start.next = t1
     def printlist(self):
         temp = self.start
         while(temp!=None):
@@ -44,5 +54,8 @@ d.insertAtEnd(67)
 d.insertAtEnd(78)
 d.insertAtEnd(100)
 d.insertAtEnd(789)
+d.printlist()
+print("Reverse the DLL list")
+d.reverse()
 d.printlist()
 
