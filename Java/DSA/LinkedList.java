@@ -1,4 +1,4 @@
-//package Java.DSA;
+
 class Node{
     int item;
     Node next;
@@ -43,6 +43,7 @@ class SLL{
         else{
             System.out.println("Empty list");
         }
+        System.out.println("");
     }
 }
 
