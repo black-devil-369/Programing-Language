@@ -2,7 +2,7 @@ class Array:
     def __init__(self,cap):
         self.capacity = cap
         self.lastindex = -1
-        self.ptr = [0]*self.capacity
+        self.ptr = [None]*self.capacity
 
     def append(self,data):
         if(self.lastindex == self.capacity -1):
@@ -32,7 +32,6 @@ a = Array(3)
 print(a.isEmpty())
 a.append(45)
 a.append(44)
-a.append("Ajay")
 a.printlist()
 print(a.count())
 print(a.get(0))
