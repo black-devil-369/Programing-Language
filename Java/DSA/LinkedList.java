@@ -17,6 +17,28 @@ class SLL{
         n.next = start;
         start = n;
     }
+    public void deleteFirstNode(){
+        Node temp;
+        if(start!=null){
+            temp = start;
+            start = start.next;
+            temp.next=null;
+            temp = null;
+        }
+    }
+    public void deleteLastNode(){
+        Node temp;
+        if(start==null || start.next==null){
+            start = null;
+        }
+        else{
+            temp = start;
+            while(temp.next.next!=null){
+                temp = temp.next;
+            }
+            temp.next = null;
+        }
+    }
     public void insertAtEnd(int data){
         Node temp;
         Node n = new Node(data);
@@ -29,6 +51,19 @@ class SLL{
                 temp = temp.next;
             }
             temp.next = n;
+        }
+    }
+    public void reverse(){
+        Node t1,t2;
+        if(start!=null && start.next!=null){
+            t2 = null;
+            do{
+                t1 = start;
+                start = start.next;
+                t1.next = t2;
+                t2 = t1;
+            }while(start.next!=null);
+            start.next = t1;
         }
     }
     public void printlist(){
@@ -58,6 +93,12 @@ class LinkedList{
         s.insertAtstart(67);
         s.insertAtstart(100);
         s.insertAtstart(200);
+        s.printlist();
+        s.deleteLastNode();
+        s.deleteFirstNode();
+        s.reverse();
+
+        System.out.println("Printing the list after the Reversing");
         s.printlist();
     }
 }
