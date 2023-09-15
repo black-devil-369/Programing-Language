@@ -101,6 +101,9 @@ public class DequeDLL {
             int b = input.nextInt();
             d.insertAtFront(b);
         }
+        input.close();
+        d.printDeque();
+        d.deleteFront();
         System.out.println("Element Enter by you inside an Deque");
         d.printDeque();
 
