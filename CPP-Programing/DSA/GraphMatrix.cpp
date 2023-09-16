@@ -1,4 +1,5 @@
 #include<iostream>
+#include "dynamicArray.cpp"
 using namespace std;
 class Graph{
     private:
@@ -6,12 +7,28 @@ class Graph{
       int e_count;
       int **adj;
     public:
+      int getV_count();
       void createGraph(int,int);
       void printmatrix();
       void printadjacentnode(int);
       bool isIsolated(int);
+      Dynamic& adjacentNode(int);
       ~Graph();
 };
+Dynamic& Graph::adjacentNode(int N){
+    Dynamic *p = new Dynamic(1);
+    if(N<v_count && N>=0){
+        for(int i=0;i<v_count;i++){
+            if(adj[N][i]==1){
+                p->append(i);
+            }
+        }
+    }
+    return *p;
+}
+int Graph::getV_count(){
+    return v_count;
+}
 // code for destructor for deallocating the memory
 Graph::~Graph(){
     for(int i =0;i<v_count;i++)
@@ -75,6 +92,7 @@ bool Graph::isIsolated(int v)
     return flag;
 }
 // Deriver Program
+/*
 int main(){
     Graph g;
     g.createGraph(5,6);
@@ -83,3 +101,4 @@ int main(){
     cout<<endl;
     return 0;
 }
+*/
