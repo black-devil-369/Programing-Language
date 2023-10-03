@@ -1,5 +1,21 @@
 import java.util.Scanner;
 import java.lang.Exception;
+public class BinarySearchTree {
+    public static void main(String[] args) {
+        BST b = new BST();
+        b.inOrder();
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the size for insert data in the Tree");
+        int n = input.nextInt();
+        for(int i =0;i<n;i++){
+            int treedata = input.nextInt();
+            b.insert(treedata);
+        }
+        input.close();
+        System.out.println("The PreOrder Traversal of Tree is : ");
+        b.inOrder();
+    }
+}
 class Node{
     public Node left;
     public int item;
@@ -94,21 +110,5 @@ class BST{
     }
     public void postOrder(){
         postorderTraversal(root);
-    }
-}
-public class BinarySearchTree {
-    public static void main(String[] args) {
-        BST b = new BST();
-        b.inOrder();
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter the size for insert data in the Tree");
-        int n = input.nextInt();
-        for(int i =0;i<n;i++){
-            int treedata = input.nextInt();
-            b.insert(treedata);
-        }
-        input.close();
-        System.out.println("The PreOrder Traversal of Tree is : ");
-        b.inOrder();
     }
 }
