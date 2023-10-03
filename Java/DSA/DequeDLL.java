@@ -1,4 +1,23 @@
 import java.util.Scanner;
+public class DequeDLL {
+    public static void main(String[] args) {
+        Deque d = new Deque();
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the number for inserting the Elmenet in the Deque");
+        int n = input.nextInt();
+        System.out.println("Enter the Element Front in the Deque");
+        for(int i =0;i<n;i++){
+            int b = input.nextInt();
+            d.insertAtFront(b);
+        }
+        input.close();
+        d.printDeque();
+        d.deleteFront();
+        System.out.println("Element Enter by you inside an Deque");
+        d.printDeque();
+
+    }
+}
 class Node{
     public Node prev;
     public int item;
@@ -88,24 +107,5 @@ class Deque{
     }
     public boolean isEmpty(){
         return front==null;
-    }
-}
-public class DequeDLL {
-    public static void main(String[] args) {
-        Deque d = new Deque();
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter the number for inserting the Elmenet in the Deque");
-        int n = input.nextInt();
-        System.out.println("Enter the Element Front in the Deque");
-        for(int i =0;i<n;i++){
-            int b = input.nextInt();
-            d.insertAtFront(b);
-        }
-        input.close();
-        d.printDeque();
-        d.deleteFront();
-        System.out.println("Element Enter by you inside an Deque");
-        d.printDeque();
-
     }
 }
