@@ -1,4 +1,23 @@
+// Deriver class For Checking the working of code
+class LinkedList{
+    public static void main(String[] args) {
+        SLL s = new SLL();
+        s.printlist();
+        System.out.println("Printing the list After the inserting the element inside an Linkedlist");
+        s.insertAtEnd(89);
+        s.insertAtEnd(78);
+        s.insertAtstart(67);
+        s.insertAtstart(100);
+        s.insertAtstart(200);
+        s.printlist();
+        s.deleteLastNode();
+        s.deleteFirstNode();
+        s.reverse();
 
+        System.out.println("Printing the list after the Reversing");
+        s.printlist();
+    }
+}
 class Node{
     int item;
     Node next;
@@ -53,6 +72,19 @@ class SLL{
             temp.next = n;
         }
     }
+    public void insertAtNode(Node temp){
+        Node t;
+        if(start!=null){
+            t = start;
+            while(t!=null){
+                if(t==temp){
+                    t.next = temp;
+                    temp.next = t.next;
+                }
+                t = t.next;
+            }
+        }
+    }
     public void reverse(){
         Node t1,t2;
         if(start!=null && start.next!=null){
@@ -79,26 +111,5 @@ class SLL{
             System.out.println("Empty list");
         }
         System.out.println("");
-    }
-}
-
-// Deriver Code
-class LinkedList{
-    public static void main(String[] args) {
-        SLL s = new SLL();
-        s.printlist();
-        System.out.println("Printing the list After the inserting the element inside an Linkedlist");
-        s.insertAtEnd(89);
-        s.insertAtEnd(78);
-        s.insertAtstart(67);
-        s.insertAtstart(100);
-        s.insertAtstart(200);
-        s.printlist();
-        s.deleteLastNode();
-        s.deleteFirstNode();
-        s.reverse();
-
-        System.out.println("Printing the list after the Reversing");
-        s.printlist();
     }
 }
