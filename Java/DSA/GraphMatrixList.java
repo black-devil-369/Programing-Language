@@ -1,4 +1,11 @@
 import java.util.Scanner;
+class GraphMatrixList{
+    public static void main(String[] args) {
+        Graphlist g = new Graphlist();
+        g.creategraph(6);
+        g.printgraph();
+    }
+}
 class Node{
     public int item;
     public Node next;
@@ -63,12 +70,5 @@ class Graphlist{
             arr[i].printlist();
         }
         System.out.println(" ");
-    }
-}
-class GraphMatrixList{
-    public static void main(String[] args) {
-        Graphlist g = new Graphlist();
-        g.creategraph(6);
-        g.printgraph();
     }
 }
