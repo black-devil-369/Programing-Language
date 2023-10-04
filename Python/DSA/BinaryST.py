@@ -6,6 +6,7 @@ class Node:
 class BST:
     def __init__(self):
         self.root = None
+    # preorderrecursion function
     def preorderrec(self,temp):
         if(temp!=None):
             print(temp.item, end=" ")
@@ -60,13 +61,22 @@ class BST:
                 n = None
 # Deriver Program for Checking the working of code
 b = BST()
-b.insert(45)
+"""b.insert(45)
 b.insert(42)
 b.insert(90)
 b.insert(80)
 b.insert(60)
 b.insert(50)
 b.insert(100)
+"""
+
+b.insert(34)
+b.insert(26)
+b.insert(40)
+b.insert(20)
+b.insert(30)
+b.insert(38)
+b.insert(45)
 print("PreOrder Binary Search Tree")
 b.preorder()
 print("PostOrder Binary Search Tree")
