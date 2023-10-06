@@ -17,6 +17,7 @@ class SLL{
        void insetatNode(node*,int);
        void reverse();
        void printlist();
+       node* rotatedList(int);
 };
 SLL::SLL(){
     start = NULL;
@@ -42,6 +43,27 @@ void SLL::printlist(){
         temp = temp->next;
     }
     cout<<endl;
+}
+// Rotated a Linked List
+node* SLL::rotatedList(int k){
+    node *t1,*t2;
+    t1 = start;
+    t2 = start;
+    if(start==NULL){
+        return start;
+    }
+    while(t1->next!=NULL){
+        t1 = t1->next;
+    }
+    while(k){
+        start = start->next;
+        t2->next = NULL;
+        t1->next = t2;
+        t1 = t2;
+        t2 = start;
+        k--;
+    }
+    return start;
 }
 // function to at a node at the end of list
 void SLL::insertatEnd(int data){
@@ -96,8 +118,10 @@ int main(){
     }
     cout<<"Data enter by you inside an SLL"<<endl;
     s.printlist();
-    s.reverse();
-    cout<<"Revering the Singly Linked List"<<endl;
+    //s.reverse();
+    //cout<<"Revering the Singly Linked List"<<endl;
+    //s.printlist();
+    s.rotatedList(2);
     s.printlist();
     return 0;
 }
