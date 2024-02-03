@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 1px solid;
+        }
+    </style>
+    <script>
+        window.onload = ()=> {
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext("2d");
+        context.rect(50,50,200,100);
+        context.fillStyle = "orange";
+        context.strokeStyle = "blue";
+        context.lineWidth = 3;
+        context.fill();
+        context.stroke();
+        context.font = "bold 32px Arial";
+        context.textAlgin = "center";
+        context.textBaseline = "middle";
+        context.strokeStyle = "red";
+        context.strokeText("Hello World!", 50, 100);
+    };
+    </script>
+</head>
+<body>
+    <canvas id="myCanvas" width="300" height="200">Jai Maa Kali</canvas>
+</body>
+</html>
