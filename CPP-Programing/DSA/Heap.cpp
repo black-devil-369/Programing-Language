@@ -18,16 +18,15 @@ class Heap{
          int count();
          void insert(int);
          int del();
-        // void heap_sort();
+         //void heap_sort1();
 };
-/*void Heap::heap_sort(){
+/*void Heap::heap_sort1(){
     cout<<"Sorted Heap is"<<endl;
     for(int i = count()-1;i>=0;i--){
         cout<<del()<<" ";
     }
     cout<<endl;
-}
-*/
+}*/
 int Heap::del(){
     int i ,item,temp,index,leftIndex,rightIndex;
     if(isEmpty()){
@@ -71,7 +70,7 @@ int Heap::del(){
     }
 }
 void Heap::insert(int data){
-    int i ,index,parIndex;
+    int index,parIndex;
     if(isFull())
         doublearray();
     for(index=lastindex+1;index>0;index=parIndex){
@@ -140,15 +139,22 @@ void heap_sort(int A[],int N)
     Heap obj(N);
     for(int i=0;i<N;i++)
         obj.insert(A[i]);
+    for(int i=0;i<N;i++){
+        cout<<obj.get(i)<<" ";
+    }
     for(int i=N-1;i>=0;i--)
         A[i]=obj.del();
 }
 int main(){
     int A[]={77,43,90,81,21,35,16,50,18,70};
-    heap_sort(A,10);
-    cout<<endl;
-    for(int i=0;i<=9;i++)
-        cout<<" "<<A[i];
+    int N = sizeof(A)/sizeof(A[0]);
+    Heap h(N);
+    for(int i =0;i<N;i++){
+        h.insert(A[i]);
+    }
+    for(int i =0;i<N;i++){
+        cout<<h.get(i)<<" ";
+    }
     cout<<endl;
     return 0;
 }
