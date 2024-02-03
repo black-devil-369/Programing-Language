@@ -91,8 +91,6 @@ bool Graph::isIsolated(int v)
     }
     return flag;
 }
-// Deriver Program
-/*
 int main(){
     Graph g;
     g.createGraph(5,6);
@@ -101,4 +99,3 @@ int main(){
     cout<<endl;
     return 0;
 }
-*/
